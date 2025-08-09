@@ -30,11 +30,6 @@ export const resumeEntry = defineType({
       of: [{type: 'string'}],
     }),
     defineField({
-      name: 'achievements',
-      type: 'array',
-      of: [{type: 'string'}],
-    }),
-    defineField({
       name: 'relatedProjects',
       type: 'array',
       of: [{type: 'reference', to: [{type: 'project'}]}],
@@ -46,15 +41,11 @@ export const resumeEntry = defineType({
         list: [
           {title: 'Work Experience', value: 'work-experience'},
           {title: 'Education', value: 'education'},
-          {title: 'Academic', value: 'academic'},
-          {title: 'Freelance', value: 'freelance'},
-          {title: 'Hackathon', value: 'hackathon'},
-          {title: 'Personal', value: 'personal'},
+          {title: 'Volunteering', value: 'volunteering'},
         ],
         layout: 'dropdown',
       },
     }),
-    defineField({name: 'githubUrl', type: 'url'}),
     defineField({
       name: 'previewItems',
       title: 'Preview Items',
