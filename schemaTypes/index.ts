@@ -8,6 +8,5 @@ export const schemaTypes = [
 	skillSection,
 	resumeEntry,
 	project,
-	skillSection,
 ]
 

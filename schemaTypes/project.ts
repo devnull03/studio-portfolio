@@ -52,8 +52,23 @@ export const project = defineType({
     defineField({name: 'githubUrl', type: 'url'}),
     defineField({
       name: 'previewItems',
+      title: 'Preview Items',
+      description: 'Items to showcase (implements PreviewItem interface).',
       type: 'array',
-      of: [{type: 'previewItem'}],
+      of: [
+        {
+          type: 'object',
+          name: 'previewItem',
+            fields: [
+              {name: 'link', type: 'url', title: 'Link', validation: r => r.required()},
+              {name: 'title', type: 'string', title: 'Title', validation: r => r.required()},
+              {name: 'image', type: 'image', title: 'Image'},
+            ],
+            preview: {
+              select: {title: 'title', subtitle: 'link', media: 'image'},
+            },
+        },
+      ],
     }),
   ],
   preview: {
