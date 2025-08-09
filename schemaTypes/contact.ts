@@ -1,9 +1,9 @@
 import {defineField, defineType} from 'sanity'
 
-export const contactInfo = defineType({
-  name: 'contactInfo',
-  title: 'Contact Info',
-  type: 'object',
+export const contact = defineType({
+  name: 'contact',
+  title: 'Contact',
+  type: 'document',
   fields: [
     defineField({name: 'name', type: 'string', validation: (r) => r.required()}),
     defineField({name: 'title', type: 'string'}),
@@ -16,5 +16,5 @@ export const contactInfo = defineType({
     defineField({name: 'resume', title: 'Resume (URL)', type: 'url'}),
     defineField({name: 'resumePdf', title: 'Resume PDF', type: 'file', options: {storeOriginalFilename: true}}),
   ],
-  preview: {select: {title: 'name'}},
+  preview: {select: {title: 'name', subtitle: 'title'}},
 })
