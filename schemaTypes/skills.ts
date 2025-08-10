@@ -7,6 +7,7 @@ export const skillSection = defineType({
   type: 'document',
   fields: [
     defineField({
+
       name: 'title',
       type: 'string',
       description: 'Section title (e.g. Programming Languages, Frameworks & Software)',
